@@ -30,6 +30,8 @@ Things you may want to cover:
 |name|string|null: false|
 |Email|string|null: false|
 |password|string|null: false|
+|image|text|------|
+
 ### Association
 - has_many :messages
 - has_many :groups_users

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title lineBot
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
+    = javascript_include_tag 'application', 'data-turbolinks-track'=> true
+    = csrf_meta_tags
+  body
+    .sotogawa
+      .camera
+      .phone_erea
+      .box
+        .box__phone-info
+        .box__top
+          .box__top__left トーク
+          .box__top__right
+            .box__top__right__editTalk
+              = icon 'far', 'comment-dots'
+            .box__top__right__editmenu
+              = icon 'fas', 'ellipsis-v'
+        .box__main
+          == yield
+        .box__bottom
+          .box__bottom__back
+            = icon 'fas', 'angle-left'
+          .box__bottom__home
+            
+
+
+
+    
+    

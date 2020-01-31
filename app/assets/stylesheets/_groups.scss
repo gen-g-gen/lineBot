@@ -1,0 +1,205 @@
+
+.sotogawa{
+  position:relative;
+  background-color: rgba(0, 0, 0, 0.952);
+  height:690px;
+  width:400px;
+  margin:auto;
+  margin-top:10px;
+  border-radius: 30px;
+}
+  .camera{
+    position:absolute;
+    top:10px;
+    left:100px;
+    height:20px;
+    width:20px;
+    background-color:gray;
+    border-radius: 50%;
+
+  }
+  .phone_erea{
+    position:absolute;
+    width: 100px;
+    height:15px;
+    background-color: gray;
+    border-radius: 3px;
+    left: 150px;
+    top:13px;
+    
+  }
+  .box{
+    position:absolute;
+    height:600px;
+    width:380px;
+    background-color:rgb(19, 16, 63);
+    border-radius: 10px;
+    top:40px;
+    left:10px;
+    
+    &__phone-info{
+      background-color: rgb(18, 18, 73);
+      width:100%;
+      height:20px;
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+
+    }
+    &__top{
+      height:60px;
+      width:100%;
+      background-color:rgb(30, 30, 75);
+      display:flex;
+      justify-content: space-between;
+      // line-height: 100%;
+      // align-items: center;
+    
+      &__left{
+        height:100%;
+        width:80%;
+        color:white;
+        line-height: 60px;
+        margin-left:15px;
+      }
+      &__right{
+        height:100%;
+        width:20%;
+        line-height: 60px;
+        display:flex;
+        justify-content: center;
+        color:white;
+        font-size:20px;
+      
+        &__editTalk{
+        width:50%;
+        margin-right:10px;
+        margin-left:10px;
+        }
+        &__editmenu{
+        width:50%;
+        margin-right:10px;
+        margin-left:10px;
+        }
+      }
+    }
+    .box__main{
+      height:calc(100% - 60px - 20px - 40px);
+      width:100%;
+      background-color: #fff;
+      border-style:none;
+      position:relative;
+    
+      .message{
+        &__box{
+          height:85px;
+          width:100%;
+          background-color: black;
+          border-style:none;
+        }
+      }
+      .menu{
+        height: 70px;
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        font-size:30px;
+        position:absolute;
+        bottom:0px;
+        
+        &__home{
+          height: 70px;
+          width:100%;
+          color:rgb(110, 108, 108);
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .far{
+          cursor:pointer;
+        }
+        // &__home-icon{}
+        &__talk{
+          height: 70px;
+          width:100%;
+          color:rgb(110, 108, 108);
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .far{
+          cursor:pointer;
+        }
+        // &__talk-icon{}
+        &__timeline{
+          height: 70px;
+          width:100%;
+          color:rgb(110, 108, 108);
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .far{
+          cursor:pointer;
+        }
+        // &__timeline-icon{}
+        &__news{
+          height: 70px;
+          width:100%;
+          color:rgb(110, 108, 108);
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .far{
+          cursor:pointer;
+        }
+        // &__news-icon{}
+        &__walet{
+          height: 70px;
+          width:100%;
+          color:rgb(110, 108, 108);
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .fas{
+          cursor:pointer;
+        }
+        // &__walet-icon{}
+      } 
+    }
+    .box__bottom{
+      height: 40px;
+      display:flex;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+
+      &__back{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size:15px;
+        color: #fff;
+        height:40px;
+        width:100px;
+        position:absolute;
+        // top:10px;
+        left: 50px;
+        
+      
+      }
+      &__home{
+        height:8px;
+        width:40px;
+        background-color:#fff;
+        border-style: none;
+        border-radius:4px;
+        // position:absolute;
+        // left:calc(90% / 2);
+
+      }
+  }
+}
