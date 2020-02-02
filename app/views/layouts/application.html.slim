@@ -11,19 +11,38 @@ html
       .phone_erea
       .box
         .box__phone-info
-        .box__top
-          .box__top__left トーク
-          .box__top__right
-            .box__top__right__editTalk
-              = icon 'far', 'comment-dots'
-            .box__top__right__editmenu
-              = icon 'fas', 'ellipsis-v'
-        .box__main
+          .time 12:15
+          .icons
+            = icon 'fas', 'signal'
+            = icon 'fas', 'rss'
+            = icon 'fas', 'battery-quarter'
+        .box__viewfile
           == yield
-        .box__bottom
-          .box__bottom__back
-            = icon 'fas', 'angle-left'
-          .box__bottom__home
+        .box__menu
+          .box__menu__home
+            = icon 'fas', 'home'
+              .menu__home-icon 
+              / 新規コメント用のボックス
+              
+          .box__menu__talk
+            = icon 'far', 'comment-dots'
+              .menu__talk-icon
+              
+          .box__menu__timeline
+            = icon 'far', 'clock'
+              .menu__timeline-icon
+              
+          .box__menu__news
+            = icon 'far', 'newspaper'
+              .menu__news-icon
+              
+          .box__menu__walet
+            = icon 'fas', 'wallet'
+              .menu__walet-icon  
+      .bottom
+        .bottom__back
+          = icon 'fas', 'angle-left'
+        .bottom__home
             
 
 
