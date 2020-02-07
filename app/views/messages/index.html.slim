@@ -1,0 +1,15 @@
+.box__viewfile
+  #field 
+    ul#chat-ul
+      
+
+  #input-field
+    = form_for [@group, @message], id: "input-field" do |form|
+      = form.text_field :content, id: "chat-input",placeholder: "comment"
+      = form.submit "SEND", id: "chat-button"
+
+
+/ / 入力場所，送信ボタン
+/ <div id= "input-field">
+/     <input type= "text" id= "chat-input">
+/     <input type= "button" value= "Send" id= "chat-bu

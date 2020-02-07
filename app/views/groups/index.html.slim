@@ -2,21 +2,23 @@
     .box__viewfile__topcontent__left トーク
     .box__viewfile__topcontent__right
       .box__viewfile__topcontent__right__editTalk
-        = link_to new_user_path, class: 'g-btn' do
-          = icon 'far', 'comment-dots'
+        = link_to new_group_path, class: 'g-btn' do
+          = icon 'fas', 'comment-medical'
       .box__viewfile__topcontent__right__editmenu
         = link_to destroy_user_session_path, method: :delete, class: 'btn' do
           = icon 'fas', 'ellipsis-v'
   .box__viewfile__main-message
-    .box__viewfile__main-message__box
-      .box__viewfile__main-message__box__image
-        .box__viewfile__main-message__box__image__outside ここに画像
-          
-      .box__viewfile__main-message__box__content
-        .box__viewfile__main-message__box__content__name 友達1
-        .box__viewfile__main-message__box__content__text message
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .box__viewfile__main-message__box
+          .box__viewfile__main-message__box__image
+            .box__viewfile__main-message__box__image__outside ここに画像
+              
+          .box__viewfile__main-message__box__content
+            .box__viewfile__main-message__box__content__name 友達1
+            .box__viewfile__main-message__box__content__text message
 
-      .box__viewfile__main-message__box__time 09:20
+          .box__viewfile__main-message__box__time 09:20
         
         
       / .box__viewfile__main-message__box__post

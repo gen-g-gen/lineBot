@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   def index
   end
 
+  def new
+  end
+
   def edit
+  
+    @groups = Group.find(params[:id])
   end
 
   def upadata

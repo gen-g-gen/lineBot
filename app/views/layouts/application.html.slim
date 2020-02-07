@@ -2,8 +2,8 @@ doctype html
 html
   head
     title lineBot
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
-    = javascript_include_tag 'application', 'data-turbolinks-track'=> true
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   body
     .sotogawa
@@ -16,16 +16,18 @@ html
             = icon 'fas', 'signal'
             = icon 'fas', 'rss'
             = icon 'fas', 'battery-quarter'
-        .box__viewfile
-          == yield
+        
+        == yield
         .box__menu
           .box__menu__home
-            = icon 'fas', 'home'
-              .menu__home-icon 
+            = link_to root_path
+              = icon 'fas', 'home'
+                .menu__home-icon 
               / 新規コメント用のボックス
               
           .box__menu__talk
-            = icon 'far', 'comment-dots'
+            = link_to "#", class: 'g-btn' do
+              = icon 'far', 'comment-dots'
               .menu__talk-icon
               
           .box__menu__timeline
@@ -44,6 +46,8 @@ html
           = icon 'fas', 'angle-left'
         .bottom__home
             
+    / = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
+    / = javascript_include_tag 'application', 'data-turbolinks-track'=> true
 
 
 
