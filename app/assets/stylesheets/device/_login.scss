@@ -1,0 +1,72 @@
+.top-view{
+  height: 480px;
+  background-color: green;
+  padding:30px 30px;
+  h2{
+    font-size:20px;
+    color:white;
+    font-weight:bold;
+  }
+
+  .email_input{
+    // height:900px;
+    width:100%;
+    font-weight:bold;
+    color:white;
+    margin:10px;
+  }
+    #user_email{
+      border-radius: 10px;
+    }
+  
+  .pass_input{
+    width:100%;
+    font-weight:bold;
+    color:white;
+    margin:10px;
+  }
+    #user_password{
+      border-radius: 10px;
+    }
+  .remember{
+    width:100%;
+    
+    color:white;
+    margin:10px;
+    font-size: 14px;
+  }
+  
+  
+  .actions{
+    height: 40px;
+    background-color: green;
+    padding:10px 0 ;
+    width:55px;
+    
+    .login-btn{
+      font-size:13px;
+      color:white;
+      font-weight:bold;
+      border-style:none;
+      padding:3px 5px;
+      border-radius: 4px;
+      background-color: rgb(136, 68, 12);
+      
+    }
+  }
+  .signup{
+    width:55px;
+    font-size:13px;
+    
+    border-style:none;
+    padding:3px 5px;
+    border-radius: 4px;
+    background-color: rgb(28, 28, 209);
+    a{
+      text-decoration: none;
+      color:white;
+    font-weight:bold;
+    }
+  }
+  
+}

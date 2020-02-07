@@ -1,5 +1,9 @@
-@import "reset";
+@import "device/reset";
 @import "messages";
 @import "groups";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "device/new";
+@import "device/login";
+@import "chatmember";
+@import "message/chat";

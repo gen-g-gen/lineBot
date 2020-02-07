@@ -1,24 +1,25 @@
-.message
-  .message__box
-    .message__box__icon
-    .message__box__post
-.menu
-  .menu__home
-    = icon 'fas', 'home'
-      .menu__home-icon
-      
-  .menu__talk
-    = icon 'far', 'comment-dots'
-      .menu__talk-icon
-      
-  .menu__timeline
-    = icon 'far', 'clock'
-      .menu__timeline-icon
-      
-  .menu__news
-    = icon 'far', 'newspaper'
-      .menu__news-icon
-      
-  .menu__walet
-    = icon 'fas', 'wallet'
-      .menu__walet-icon   
+  .box__viewfile__topcontent
+    .box__viewfile__topcontent__left トーク
+    .box__viewfile__topcontent__right
+      .box__viewfile__topcontent__right__editTalk
+        = link_to new_group_path, class: 'g-btn' do
+          = icon 'fas', 'comment-medical'
+      .box__viewfile__topcontent__right__editmenu
+        = link_to destroy_user_session_path, method: :delete, class: 'btn' do
+          = icon 'fas', 'ellipsis-v'
+  .box__viewfile__main-message
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .box__viewfile__main-message__box
+          .box__viewfile__main-message__box__image
+            .box__viewfile__main-message__box__image__outside ここに画像
+              
+          .box__viewfile__main-message__box__content
+            .box__viewfile__main-message__box__content__name 友達1
+            .box__viewfile__main-message__box__content__text message
+
+          .box__viewfile__main-message__box__time 09:20
+        
+        
+      / .box__viewfile__main-message__box__post
+ 

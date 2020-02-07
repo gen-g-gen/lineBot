@@ -2,8 +2,8 @@ doctype html
 html
   head
     title lineBot
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
-    = javascript_include_tag 'application', 'data-turbolinks-track'=> true
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   body
     .sotogawa
@@ -11,20 +11,43 @@ html
       .phone_erea
       .box
         .box__phone-info
-        .box__top
-          .box__top__left トーク
-          .box__top__right
-            .box__top__right__editTalk
+          .time 12:15
+          .icons
+            = icon 'fas', 'signal'
+            = icon 'fas', 'rss'
+            = icon 'fas', 'battery-quarter'
+        
+        == yield
+        .box__menu
+          .box__menu__home
+            = link_to root_path
+              = icon 'fas', 'home'
+                .menu__home-icon 
+              / 新規コメント用のボックス
+              
+          .box__menu__talk
+            = link_to "#", class: 'g-btn' do
               = icon 'far', 'comment-dots'
-            .box__top__right__editmenu
-              = icon 'fas', 'ellipsis-v'
-        .box__main
-          == yield
-        .box__bottom
-          .box__bottom__back
-            = icon 'fas', 'angle-left'
-          .box__bottom__home
+              .menu__talk-icon
+              
+          .box__menu__timeline
+            = icon 'far', 'clock'
+              .menu__timeline-icon
+              
+          .box__menu__news
+            = icon 'far', 'newspaper'
+              .menu__news-icon
+              
+          .box__menu__walet
+            = icon 'fas', 'wallet'
+              .menu__walet-icon  
+      .bottom
+        .bottom__back
+          = icon 'fas', 'angle-left'
+        .bottom__home
             
+    / = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true
+    / = javascript_include_tag 'application', 'data-turbolinks-track'=> true
 
 
 
