@@ -13,10 +13,7 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     @message.save
     @messages = @group.messages.includes(:user)
-    respond_to do |format|
-      format.json { render json: @message}
-      format.html { redirect_to :root }
-    end
+
   end
 
   private
