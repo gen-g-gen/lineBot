@@ -11,7 +11,13 @@ html
       .phone_erea
       .box
         .box__phone-info
-          .time 12:15
+          .time 
+            javascript: 
+              var time= new Date();
+              var hour = time.getHours();
+              var minute = time.getMinutes();
+              var second = time.getSeconds();
+              document.write(hour+":"+minute);
           .icons
             = icon 'fas', 'signal'
             = icon 'fas', 'rss'

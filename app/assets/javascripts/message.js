@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
         "content": "Chuck Norris doesn't use a computer because a computer does everything slower than Chuck Norris."
     },
     {
-        "content": "Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck error."
+        "content": "Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses."
     },
     {
         "content": "Chuck Norris doesn't bug hunt, as that signifies a probability of failure. He goes bug killing."
@@ -92,7 +92,8 @@ function bot (name){
       var data = JSON.parse(json);
       output(data[random].content, `you`)
       // 選んだrandomを消す
-      chat.splice(random,1);
+      name.splice(random,1);
+      console.log("ok")
     },1000);
   };
   
@@ -110,8 +111,7 @@ setTimeout(function(){
     
     
   output(inputText.value, `me`);
-  console.log(inputText.value)
-  if(inputText.value === "noris"){
+  if(inputText.value == "noris"||inputText.value == "chuck"){
     bot(noris)
     inputText.value = "";
     

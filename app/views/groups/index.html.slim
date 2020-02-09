@@ -12,10 +12,10 @@
       = link_to group_messages_path(group) do
         .box__viewfile__main-message__box
           .box__viewfile__main-message__box__image
-            .box__viewfile__main-message__box__image__outside ここに画像
-              
+            .box__viewfile__main-message__box__image__outside
+              = image_tag('norris_.jpg', size: "75x75")
           .box__viewfile__main-message__box__content
-            .box__viewfile__main-message__box__content__name 友達1
+            .box__viewfile__main-message__box__content__name noris_bot
             .box__viewfile__main-message__box__content__text message
 
           .box__viewfile__main-message__box__time 09:20
