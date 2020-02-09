@@ -1,6 +1,56 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-const chat = ["やぁ", "お元気？", "それな〜","言うよね〜", "え？","は？","めんごめんご"];
+  const noris = [
+    {
+        "content": "Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck error."
+    },
+    {
+        "content": "Chuck Norris's keyboard doesn't have a Ctrl key because nothing controls Chuck Norris."
+    },
+    {
+        "content": "Chuck Norris doesn't use a computer because a computer does everything slower than Chuck Norris."
+    },
+    {
+        "content": "Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck error."
+    },
+    {
+        "content": "Chuck Norris doesn't bug hunt, as that signifies a probability of failure. He goes bug killing."
+    },
+    {
+        "content": "Chuck Norris can access private methods."
+    },
+    {
+        "content": "When Chuck Norris points to null, null quakes in fear."
+    },
+    {
+        "content": "Chuck Norris' beard is immutable."
+    },
+    {
+        "content": "Chuck Norris's first program was kill -9."
+    },
+    {
+        "content": "When Chuck Norris gives a method an argument, the method loses."
+    }
+  ];
+  
+  const chat = [
+    {
+      "content": "やぁ"
+    },
+    {
+      "content": "無能か?"
+    },
+    {
+      "content": "玄関に5000円置いといたよ"
+    },
+    {
+      "content": "腹ペコりんちょ"
+    },
+    {
+      "content": "どんまいだね〜"
+    }
+  ];
+  
 
 let chatNum = 1;
 
@@ -32,6 +82,22 @@ function output(val, person) {
   window.scroll(0, 400);
 };
 
+function bot (name){
+
+  if(chatNum % 2 !== 0){
+    setTimeout(function(){
+      //noris-chatから引っぱってくるようにする。
+      const random = Math.floor(Math.random()*name.length);
+      var json = JSON.stringify(name);
+      var data = JSON.parse(json);
+      output(data[random].content, `you`)
+      // 選んだrandomを消す
+      chat.splice(random,1);
+    },1000);
+  };
+  
+};
+
 // 最初の挨拶
 setTimeout(function(){
   output("ご機嫌よ〜", `you`);
@@ -40,33 +106,20 @@ setTimeout(function(){
 // 送信ボタンを押したとき
   document.getElementById("chat-button").addEventListener("click", function(e){
     e.preventDefault();   
-    console.log("発火")
-
-    // // ajaxの呼び出しを行う
-    // var req = new XMLHttpRequest();
-    // var fd  = new FormData(this);
-    // // リンク表示の仕方デージョーブ？指定方法はある気がする..
-    // req.open("POST", "http://localhost:3001/groups/2/messages", true);
-    // req.send(fd);
-    // console.log(this);
-    // // debugger;
-    
-    // req.addEventListener("load", (e) => {
-    // const message = JSON.parse(req.responseText);
-    
-    // console.log(message)
     var inputText = document.getElementById("chat-input");
-    output(inputText.value, `me`);
+    
+    
+  output(inputText.value, `me`);
+  console.log(inputText.value)
+  if(inputText.value === "noris"){
+    bot(noris)
     inputText.value = "";
+    
+  } else{
+    bot(chat)
+    inputText.value = "";
+  }
 
-      if(chatNum % 2 !== 0){
-        setTimeout(function(){
-        const random = Math.floor(Math.random()*chat.length);
-          output(chat[random], `you`)
-          // 選んだrandomを消す
-          chat.splice(random,1);
-        },1000);
-      };
-    });
   });
-// }, false);
+});
+
