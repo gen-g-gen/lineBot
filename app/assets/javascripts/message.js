@@ -38,23 +38,23 @@ setTimeout(function(){
 }, 1000);
 
 // 送信ボタンを押したとき
-  document.getElementById("new_message").addEventListener("submit", function(e){
+  document.getElementById("chat-button").addEventListener("click", function(e){
     e.preventDefault();   
     console.log("発火")
 
-    // ajaxの呼び出しを行う
-    var req = new XMLHttpRequest();
-    var fd  = new FormData(this);
-    // リンク表示の仕方デージョーブ？指定方法はある気がする..
-    req.open("POST", "http://localhost:3001/groups/2/messages", true);
-    req.send(fd);
-    console.log(this);
-    // debugger;
+    // // ajaxの呼び出しを行う
+    // var req = new XMLHttpRequest();
+    // var fd  = new FormData(this);
+    // // リンク表示の仕方デージョーブ？指定方法はある気がする..
+    // req.open("POST", "http://localhost:3001/groups/2/messages", true);
+    // req.send(fd);
+    // console.log(this);
+    // // debugger;
     
-    req.addEventListener("load", (e) => {
-    const message = JSON.parse(req.responseText);
+    // req.addEventListener("load", (e) => {
+    // const message = JSON.parse(req.responseText);
     
-    console.log(message)
+    // console.log(message)
     var inputText = document.getElementById("chat-input");
     output(inputText.value, `me`);
     inputText.value = "";
@@ -69,4 +69,4 @@ setTimeout(function(){
       };
     });
   });
-}, false);
+// }, false);
