@@ -11,13 +11,21 @@ html
       .phone_erea
       .box
         .box__phone-info
-          .time 
+          .time#time
             javascript: 
               var time= new Date();
               var hour = time.getHours();
-              var minute = time.getMinutes();
+              var minute = time.getMinutes()
+              document.write(hour+":"+minute)
+                function clock(){
+                  var time= new Date();
+                  var hour = time.getHours();
+                  var minute = time.getMinutes();
+                  var time = hour+":"+minute;
+                  document.getElementById('time').innerHTML = time;
+                };
+                setInterval('clock()',5000);
               
-              document.write(hour+":"+minute);
           .icons
             = icon 'fas', 'signal'
             = icon 'fas', 'rss'
