@@ -17,3 +17,10 @@
     .actions
       = f.submit "Log in", class:"login-btn"
   = render "devise/shared/links"
+  .icon
+    .facebook
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: "facebook__btn" do
+        = icon 'fab','facebook-square' 
+    .google
+      = link_to  user_google_oauth2_omniauth_authorize_path, method: :post, class: "google__btn" do
+        = icon 'fab','google' 

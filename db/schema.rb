@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_081603) do
+ActiveRecord::Schema.define(version: 2020_03_06_025818) do
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "image"
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
@@ -37,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_02_03_081603) do
     t.index ["user_id"], name: "index_norriscs_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "user_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "user_id"
@@ -47,7 +57,9 @@ ActiveRecord::Schema.define(version: 2020_02_03_081603) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "nickname", null: false
+    t.string "firstname", default: "", null: false
+    t.string "lastname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -58,13 +70,14 @@ ActiveRecord::Schema.define(version: 2020_02_03_081603) do
     t.string "phone_number"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name"], name: "index_users_on_name"
+    t.index ["nickname"], name: "index_users_on_nickname"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
   add_foreign_key "norriscs", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "users"
 end

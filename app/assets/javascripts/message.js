@@ -38,16 +38,16 @@ window.addEventListener('DOMContentLoaded', function() {
       "content": "やぁ"
     },
     {
-      "content": "無能か?"
+      "content": "元気?"
     },
     {
       "content": "玄関に5000円置いといたよ"
     },
     {
-      "content": "腹ペコりんちょ"
+      "content": "お腹減ってきた..."
     },
     {
-      "content": "どんまいだね〜"
+      "content": "www"
     }
   ];
   

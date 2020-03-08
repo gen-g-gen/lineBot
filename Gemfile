@@ -70,3 +70,6 @@ gem 'html2slim'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

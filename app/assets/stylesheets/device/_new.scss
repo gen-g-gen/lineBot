@@ -2,6 +2,7 @@
   height: 420px;
   background-color: green;
   padding:30px 30px;
+  overflow: scroll;
   h2{
     font-size:20px;
     color:white;
@@ -20,34 +21,19 @@
   }
 
 
-  .email_input{
+  .input_fields{
     // height:900px;
     width:100%;
     font-weight:bold;
     color:white;
     margin:10px;
-
-    #user_email{
-      border-radius: 10px;
-    }
-  }
-  .pass_field{
-    width:100%;
-    font-weight:bold;
-    color:white;
-    margin:10px;
-
-    #user_password{
-      border-radius: 10px;
-    }
-  }
-  .co-pass_field{
-    width:100%;
-    font-weight:bold;
-    color:white;
-    margin:10px;
-
-    #user_password_confirmation{
+    border-radius: 10px;
+    #user_email, 
+    #user_password, 
+    #user_password_confirmation,
+    #user_nickname,
+    #user_lastname,
+    #user_firstname{
       border-radius: 10px;
     }
   }
@@ -67,6 +53,48 @@
     }
 
   }
+  .icon{
+    display:flex;
+    // justify-content: center;
+
+    .facebook{
+      border-radius: 6px;
+      background-color: rgba(0, 81, 255, 0.829);
+      height:40px;
+      width:40px;
+      &__btn{
+        display:flex;
+        justify-content: center;
+        text-decoration: none;
+      .fab{
+        font-size: 30px;
+        color: white;
+        line-height: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .google{
+    margin-left: 10px;
+    background-color: #fff;
+      height:40px;
+      width:40px;
+      border-radius: 6px;
+      display:flex;
+      justify-content: center;
+      &__btn{
+        display: block;
+        display:flex;
+        justify-content: center;
+        text-decoration: none;
+      .fab{
+        font-size: 25px;
+        color: rgba(245, 39, 39, 0.74);
+        line-height: 40px;
+      }
+    }
+  }
+}
   .login{
     width:55px;
     font-size:13px;

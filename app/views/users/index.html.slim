@@ -1,0 +1,33 @@
+.box__viewfile__topcontent
+  .box__viewfile__topcontent__left トーク
+  .box__viewfile__topcontent__right
+    .box__viewfile__topcontent__right__editTalk
+      = link_to new_group_path, class: 'g-btn' do
+        = icon 'fas', 'comment-medical'
+    .box__viewfile__topcontent__right__editmenu
+      = link_to destroy_user_session_path, method: :delete, class: 'btn' do
+        = icon 'fas', 'ellipsis-v'
+.box__viewfile__main-message 
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .box__viewfile__main-message__box
+        .box__viewfile__main-message__box__image
+          .box__viewfile__main-message__box__image__outside
+          -if group.image != nil
+            img src="#{group.image.url}"
+          -else 
+            img sre="sleep_inemuri_reclining_chair_woman.png"
+        .box__viewfile__main-message__box__content
+          .box__viewfile__main-message__box__content__name
+            =group.name
+          .box__viewfile__main-message__box__content__text
+            / =group.message
+
+        .box__viewfile__main-message__box__time 
+          -if @time.day == group.created_at.day
+            = group.created_at.strftime("%H:%M")
+          -elsif @time.day - group.created_at.day == 1
+            p 昨日
+          -else @time.day - group.created_at.day >= 2
+            = group.created_at.strftime("%m/%d")
+
