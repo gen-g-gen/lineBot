@@ -20,6 +20,8 @@ class GroupsController < ApplicationController
   def edit
     # binding.pry
     @group = Group.find(params[:id])
+    user = User.all
+    @user = user
   end
 
   def destroy

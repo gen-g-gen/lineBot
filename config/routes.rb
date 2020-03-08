@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   root 'groups#index'
 
   resources :users, only: [:new, :create,:edit, :update, :show,:index]
-  resources :groups, only: [:new, :create, :edit,:update] do
-    member do
-      delete 'destroy'
-    end
+  resources :groups, only: [:new, :create, :edit, :update,:destroy] do
+    # member do
+    #   delete ''
+    # end
     resources :messages, only: [:index,:create]
   end
   

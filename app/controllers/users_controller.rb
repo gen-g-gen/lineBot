@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @user = User.all
   end
 
   def new
@@ -18,6 +19,9 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
   end
 
   
