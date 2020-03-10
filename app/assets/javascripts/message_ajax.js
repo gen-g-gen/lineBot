@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-  const chat = ["やぁ", "お元気？", "それな〜","言うよね〜", "え？","は？","めんごめんご"];
   
   let chatNum = 0;
   
+  // コメントが、相手か、自分のかを判断する
   function output(val, person) {
   
     if (!val) return false; 
@@ -26,47 +26,99 @@ window.addEventListener('DOMContentLoaded', function() {
       li.appendChild(div);
       chatNum++;
     };
-    
-    var elementHtml =document.documentElement;
-    var bottom = elementHtml.scrollHeight - elementHtml.clientHeight;
-    window.scroll(0, 400);
   };
-  
 
-  
+  //自動返信機能
+  function bot (name){
+
+    if(chatNum % 2 !== 0){
+      setTimeout(function(){
+        const random = Math.floor(Math.random()*name.length);
+        var json = JSON.stringify(name);
+        var data = JSON.parse(json);
+        output(data[random].content, `you`)
+        // 選んだrandomを消す
+        name.splice(random,1);
+      },1000);
+    };
+  };
+
   // 送信ボタンを押したとき
- 
-    document.getElementById("new_message").addEventListener("click", function(e){
-      e.preventDefault();   
-  
+    document.getElementById("new_message").addEventListener("change", function(e){
+      e.preventDefault();
+
       // ajaxの呼び出しを行う
       var req = new XMLHttpRequest();
       var fd  = new FormData(this);
 
-      // リンク表示の仕方デージョーブ？指定方法はある気がする..
       req.open("POST", req.responseURL, true);
       req.send(fd);
-      
-      
-      req.addEventListener("load", (e) => {
-      // const message = JSON.parse(req.responseText);
-      var json = JSON.stringify(name);
-      var data = JSON.parse(json);
-      
+
+      req.addEventListener("load", function(e){
       var inputText = document.getElementById("chat-input");
       output(inputText.value, `me`);
-      inputText.value = "";
-  
-        if(chatNum % 2 !== 0){
-          setTimeout(function(){
-          const random = Math.floor(Math.random()*chat.length);
-            output(chat[random], `you`)
-            // 選んだrandomを消す
-            chat.splice(random,1);
-          },1000);
+      
+        if(inputText.value == "noris"||inputText.value == "chuck"){
+          bot(noris)
+          inputText.value = "";
+          console.log("noris発動")
+        } else {
+          bot(chat)
+          inputText.value = "";
+          console.log("chat発動")
         };
+      inputText.value = "";
       });
     });
+
+    const chat = [
+      {
+          "content": "おはよう！"
+      },
+      {
+          "content": "元気？"
+      },
+      {
+          "content": "なんかお腹減ってきたね！"
+      },
+      {
+          "content": "え、ふりがなふってくれないと読めない..."
+      }
+];
+
+      const noris = [
+      {
+          "content": "Chuck Norris never gets a syntax error. Instead, the language gets a DoesNotConformToChuck error."
+      },
+      {
+          "content": "Chuck Norris's keyboard doesn't have a Ctrl key because nothing controls Chuck Norris."
+      },
+      {
+          "content": "Chuck Norris doesn't use a computer because a computer does everything slower than Chuck Norris."
+      },
+      {
+          "content": "Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses."
+      },
+      {
+          "content": "Chuck Norris doesn't bug hunt, as that signifies a probability of failure. He goes bug killing."
+      },
+      {
+          "content": "Chuck Norris can access private methods."
+      },
+      {
+          "content": "When Chuck Norris points to null, null quakes in fear."
+      },
+      {
+          "content": "Chuck Norris' beard is immutable."
+      },
+      {
+          "content": "Chuck Norris's first program was kill -9."
+      },
+      {
+          "content": "When Chuck Norris gives a method an argument, the method loses."
+      }
+];
   }, false);
+
 
   
