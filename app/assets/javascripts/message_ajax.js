@@ -44,6 +44,7 @@ window.addEventListener('DOMContentLoaded', function() {
   };
 
   // 送信ボタンを押したとき
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     document.getElementById("new_message").addEventListener("change", function(e){
       e.preventDefault();
 
@@ -61,15 +62,15 @@ window.addEventListener('DOMContentLoaded', function() {
         if(inputText.value == "noris"||inputText.value == "chuck"){
           bot(noris)
           inputText.value = "";
-          console.log("noris発動")
         } else {
           bot(chat)
           inputText.value = "";
-          console.log("chat発動")
+          
         };
       inputText.value = "";
       });
     });
+  }
 
     const chat = [
       {
@@ -118,7 +119,8 @@ window.addEventListener('DOMContentLoaded', function() {
           "content": "When Chuck Norris gives a method an argument, the method loses."
       }
 ];
-  }, false);
+
+}, false);
 
 
   

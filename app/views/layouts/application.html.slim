@@ -20,7 +20,13 @@ html
                 function clock(){
                   var time= new Date();
                   var hour = time.getHours();
+                    if (hour < 10) {
+                    hour = "0" + hh;
+                    };
                   var minute = time.getMinutes();
+                  if (minute < 10) {
+                    minute = "0" + hh;
+                    };
                   var time = hour+":"+minute;
                   document.getElementById('time').innerHTML = time;
                 };

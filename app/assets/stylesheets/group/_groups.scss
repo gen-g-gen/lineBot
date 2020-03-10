@@ -89,6 +89,9 @@
           justify-content: center;
           color:white;
           font-size:20px;
+          a{
+            color: #fff;
+          }
         
           &__editTalk{
           width:50%;
@@ -124,6 +127,9 @@
         display:flex;
         align-items: center;
         justify-content: center;
+        a{
+          color: rgba(0, 0, 0, 0.733);;
+        }
       }
       
       .far{
@@ -137,6 +143,9 @@
         display:flex;
         align-items: center;
         justify-content: center;
+        a{
+          color: rgba(0, 0, 0, 0.733);;
+        }
       }
 
       .far{
@@ -202,7 +211,9 @@
       position:absolute;
       left: 80px;
       text-decoration: none;
-      
+      a{
+        color: #fff;
+      }
     
     }
     &__home{
@@ -213,6 +224,7 @@
       border-radius:4px;
       position:absolute;
       left:180px;
+      
     }
   }
 

@@ -1,19 +1,17 @@
 class UsersController < ApplicationController
 
-
   def index
-    @user = User.all
+    @user = User.where.not(id: current_user.id)
   end
 
   def new
   end
 
   def edit
-  
-    @groups = Group.find(params[:id])
+    @user = User.find(params[:id])
   end
 
-  def upadata
+  def update
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -28,7 +26,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-    params.require(:group).permit(:name, :email, :phone, :image)
+    params.require(:user).permit(:nickname, :firstname, :lastname, :email, :image)
     end
 
 

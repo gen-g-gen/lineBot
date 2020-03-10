@@ -30,14 +30,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_025818) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "norriscs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_norriscs_on_user_id"
-  end
-
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -67,7 +59,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_025818) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "phone_number"
     t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname"
@@ -76,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_025818) do
 
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
-  add_foreign_key "norriscs", "users"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "users"
