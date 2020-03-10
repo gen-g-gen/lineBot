@@ -1,0 +1,31 @@
+.top-view
+  h2
+    | Edit
+  = form_for @user do |f|
+    .field.input_fields
+      .field-label
+        = f.label :nickname
+      .field-input
+        = f.text_field :nickname, autofocus: true
+    .field.input_fields
+      .field-label
+        = f.label :lastname
+      .field-input
+        = f.text_field :lastname, autofocus: true
+    .field.input_fields
+      .field-label
+        = f.label :firstname
+      .field-input
+        = f.text_field :firstname, autofocus: true
+    .field.input_fields
+      = f.label :email
+      br
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field.input_fields
+      = f.label :image
+      br
+      = f.file_field :image, autocomplete: "image"
+
+    .actions
+      = f.submit "Edit", class:"btn"
+  / = render "devise/shared/links"

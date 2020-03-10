@@ -20,8 +20,8 @@ class GroupsController < ApplicationController
   def edit
     # binding.pry
     @group = Group.find(params[:id])
-    user = User.all
-    @user = user
+    @user = User.where.not(id: current_user.id)
+    
   end
 
   def destroy

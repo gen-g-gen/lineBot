@@ -1,2 +1,0 @@
-class Norrisc < ApplicationRecord
-end
