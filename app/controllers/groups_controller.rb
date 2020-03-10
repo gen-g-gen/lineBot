@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:update, :destroy, :edit]
+
   def index
   end
+
   def new
     @group = Group.new
     @group.users << current_user
@@ -18,20 +21,16 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    # binding.pry
-    @group = Group.find(params[:id])
     @user = User.where.not(id: current_user.id)
     
   end
 
   def destroy
-    @group = Group.find(params[:id])
     @group.destroy
     redirect_to root_path
   end
 
   def update
-    @group = Group.find(params[:id])
     @group.update(group_params)
     redirect_to root_path
   end
@@ -46,6 +45,9 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name,:image, user_ids: [] )
   end
 
+  def set_group
+    @group = Group.find(params[:id])
+  end
   
 
 end

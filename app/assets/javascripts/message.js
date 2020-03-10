@@ -89,7 +89,6 @@
 //       output(data[random].content, `you`)
 //       // 選んだrandomを消す
 //       name.splice(random,1);
-//       console.log("ok")
 //     },1000);
 //   };
   
