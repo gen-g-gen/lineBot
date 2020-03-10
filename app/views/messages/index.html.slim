@@ -1,15 +1,17 @@
 .box__viewfile
+  .box__viewfile__topcontent
+    .box__viewfile__topcontent__left
+      =@group.name
+    .box__viewfile__topcontent__right
+      .box__viewfile__topcontent__right__editTalk
+      .box__viewfile__topcontent__right__editmenu
+        = link_to edit_group_path(@group[:id]), class: 'btn'
+          = icon 'far', 'edit'
   #field 
     ul#chat-ul
       
 
   #input-field
-    = form_for [@group, @message], id: "input-field" do |form|
+    = form_for [@group, @message], id: "new_message" do |form|
       = form.text_field :content, id: "chat-input",placeholder: "comment"
       = form.submit "SEND", id: "chat-button"
-
-
-/ / 入力場所，送信ボタン
-/ <div id= "input-field">
-/     <input type= "text" id= "chat-input">
-/     <input type= "button" value= "Send" id= "chat-bu

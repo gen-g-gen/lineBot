@@ -3,30 +3,42 @@
     | Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
-    .field.name_input
+    .field.input_fields
       .field-label
-        = f.label :name
+        = f.label :nickname
       .field-input
-        = f.text_field :name, autofocus: true
-      
-    .field.email_input
+        = f.text_field :nickname, autofocus: true
+    .field.input_fields
+      .field-label
+        = f.label :lastyname
+      .field-input
+        = f.text_field :lastname, autofocus: true
+    .field.input_fields
+      .field-label
+        = f.label :firstname
+      .field-input
+        = f.text_field :firstname, autofocus: true
+    .field.input_fields
       = f.label :email
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field.pass_field
-      = f.label :password
-      - if @minimum_password_length
-        em
-          | (
-          = @minimum_password_length
-          |  characters minimum)
-      br
-      = f.password_field :password, autocomplete: "new-password"
-    .field.co-pass_field
-      = f.label :password_confirmation
-      br
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .field.image_field
+    .field.input_fields
+      - if @sns_id.present?
+        = hidden_field_tag :sns_auth, true
+      - else
+        = f.label :password
+        - if @minimum_password_length
+          em
+            | (
+            = @minimum_password_length
+            |  characters minimum)
+        br
+        = f.password_field :password, autocomplete: "new-password"
+        .field.input_fields
+          = f.label :password_confirmation
+          br
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field.input_fields
       = f.label :image
       br
       = f.file_field :image, autocomplete: "image"

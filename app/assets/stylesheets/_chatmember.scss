@@ -1,9 +1,13 @@
+.box{
+
+  position: relative;
 .box__viewfile__main-message{
   height:450px;
   width:100%;
   background-color: #fff;
   border-style:none;
   overflow: scroll;
+
  
 
   a {
@@ -11,41 +15,47 @@
   }
 
   &__box{
-    height:85px;
-    width:100%;
+    height:80px;
+    width:calc(100%-6px);
     background-color: #fff;
-    border-style:none;
     display: flex;
     justify-items: center;
     align-items: center;
-
+    border-bottom:1px solid rgb(228, 226, 226);
+    margin: 3px;
 
     &__image{
-      height:85px;
-      width:85px;
+     
+      height:70px;
+      width:70px;
       // background-color: pink;
       display:flex;
       justify-items: center;
       align-items: center;
-      margin:0 5px;
-      border-radius: 50%;
-
-      &__outside{
-        height:75px;
-        width:75px;
-        background-color: white;
+      padding:5px;
+      
+      img{
+        display:block;
         border-radius: 50%;
-        margin-left:0px;
-        .noris{
-          height:75px;
-        width:75px;
-        border-radius: 50%;
-        }
+        height:70px;
+        width:70px;
       }
+      // &__outside{
+      //   height:7px;
+      //   width:70px;
+      //   background-color: white;
+      //   border-radius: 50%;
+      //   margin-left:0px;
+      //   .noris{
+      //     height:75px;
+      //   width:75px;
+      //   border-radius: 50%;
+      //   }
+      // }
     }
     &__content{
-      width:80%;
-      height:85px;
+      width:75%;
+      height:100%;
       background-color: #fff;
       display:flex;
       justify-items: center;
@@ -68,8 +78,33 @@
       color:rgba(187, 187, 187, 0.87);
       font-size: 13px;
       margin-right:10px;
-
+      width:25%;
     }
   }
   
+  .submitbtn{
+    
+   background-color: transparent;
+   border:none;
+    line-height: 40px;
+    align-items: center;
+    color: black;
+    position:absolute;
+    top: 32px;
+    right:40px;
+    padding:0;
+   
+    .far{
+      height: 30px;
+      width:30px;
+      line-height: 40px;
+      align-items: center;
+      font-size:25px;
+      color:white;
+      cursor: pointer;
+      z-index: 0;
+    }
+  }
+
+}
 }

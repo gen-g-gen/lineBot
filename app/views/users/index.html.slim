@@ -1,0 +1,28 @@
+.box__viewfile__topcontent
+  .box__viewfile__topcontent__left トーク
+  .box__viewfile__topcontent__right
+    .box__viewfile__topcontent__right__editTalk
+      / = link_to new_group_path, class: 'g-btn' do
+      /   = icon 'fas', 'comment-medical'
+    .box__viewfile__topcontent__right__editmenu
+      = link_to user_path(current_user.id), class: 'btn' do
+        = icon 'fas', 'ellipsis-v'
+.box__viewfile__main-message 
+  - @user.each do |user|
+    = link_to user_path(user.id) do
+      .box__viewfile__main-message__box
+        .box__viewfile__main-message__box__image
+          .box__viewfile__main-message__box__image__outside
+          -if user.image != nil
+            img src="#{user.image.url}"
+          -else 
+            img sre="sleep_inemuri_reclining_chair_woman.png"
+        .box__viewfile__main-message__box__content
+          .box__viewfile__main-message__box__content__name
+            =user.nickname
+          .box__viewfile__main-message__box__content__text
+            / =group.message
+
+        .box__viewfile__main-message__box__time 
+         
+

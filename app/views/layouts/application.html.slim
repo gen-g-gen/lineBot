@@ -11,13 +11,21 @@ html
       .phone_erea
       .box
         .box__phone-info
-          .time 
+          .time#time
             javascript: 
               var time= new Date();
               var hour = time.getHours();
-              var minute = time.getMinutes();
+              var minute = time.getMinutes()
+              document.write(hour+":"+minute)
+                function clock(){
+                  var time= new Date();
+                  var hour = time.getHours();
+                  var minute = time.getMinutes();
+                  var time = hour+":"+minute;
+                  document.getElementById('time').innerHTML = time;
+                };
+                setInterval('clock()',30000);
               
-              document.write(hour+":"+minute);
           .icons
             = icon 'fas', 'signal'
             = icon 'fas', 'rss'
@@ -26,13 +34,12 @@ html
         == yield
         .box__menu
           .box__menu__home
-            = link_to root_path
+            = link_to users_path
               = icon 'fas', 'home'
                 .menu__home-icon 
-              / 新規コメント用のボックス
               
           .box__menu__talk
-            = link_to "#", class: 'g-btn' do
+            = link_to root_path, class: 'g-btn' do
               = icon 'far', 'comment-dots'
               .menu__talk-icon
               
@@ -49,7 +56,8 @@ html
               .menu__walet-icon  
       .bottom
         .bottom__back
-          = icon 'fas', 'angle-left'
+          =link_to :back do
+            = icon 'fas', 'angle-left'
         .bottom__home
             
     / = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> true

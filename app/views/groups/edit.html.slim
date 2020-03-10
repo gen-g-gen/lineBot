@@ -1,0 +1,25 @@
+.box__viewfile
+  .box__viewfile__topcontent
+    .box__viewfile__topcontent__left Edit
+    .box__viewfile__topcontent__right
+      .box__viewfile__topcontent__right__editTalk
+      .box__viewfile__topcontent__right__editmenu
+        = link_to group_path,method: :delete, class: 'btn'
+          = icon 'fas', 'ellipsis-v'
+  .box__viewfile__main-message
+    = form_for @group do |f|
+      .box__viewfile__main-message__box
+        .box__viewfile__main-message__box__image
+          = f.file_field :image
+        .box__viewfile__main-message__box__content
+          .box__viewfile__main-message__box__content__name 
+            = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+      = f.collection_check_boxes :user_ids, @user, :id, :nickname do |b|
+        .box__viewfile__main-message__box
+          .box__viewfile__main-message__box__image
+            =image_tag(b.object.image.url)             
+          .box__viewfile__main-message__box__content
+            .box__viewfile__main-message__box__content__name 
+              = b.label { b.check_box + b.text }
+        = button_tag sanitize('<i class="far fa-save"></i>'), :type => "submit", class: "submitbtn"
+ 

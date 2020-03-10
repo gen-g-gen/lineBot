@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+
+
   def index
+    @user = User.all
   end
 
   def new
@@ -18,9 +21,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  
+
   private
     def user_params
-    params.require(:group).permit(:name, :email, :phone)
+    params.require(:group).permit(:name, :email, :phone, :image)
     end
 
 
