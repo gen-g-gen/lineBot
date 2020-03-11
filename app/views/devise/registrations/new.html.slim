@@ -1,45 +1,63 @@
 .top-view
   h2
-    | Sign up
+    | 新規登録
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field.input_fields
       .field-label
-        = f.label :nickname
+        |
+          ニックネーム
+        |
+        - f.label :nickname
       .field-input
         = f.text_field :nickname, autofocus: true
     .field.input_fields
       .field-label
-        = f.label :lastname
+        |
+          名前(全角)
+        |
+        - f.label :lastname
       .field-input
         = f.text_field :lastname, autofocus: true
     .field.input_fields
       .field-label
-        = f.label :firstname
+        |
+          苗字(全角)
+        |
+        - f.label :firstname
       .field-input
         = f.text_field :firstname, autofocus: true
     .field.input_fields
-      = f.label :email
+      |
+        メールアドレス
+      |
+      - f.label :email
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
     .field.input_fields
       - if @sns_id.present?
         = hidden_field_tag :sns_auth, true
       - else
-        = f.label :password
+        - f.label :password
         - if @minimum_password_length
           em
-            | (
+            | パスワード(
             = @minimum_password_length
-            |  characters minimum)
+            |  文字以上)
         br
         = f.password_field :password, autocomplete: "new-password"
         .field.input_field
-          = f.label :password_confirmation
+          |
+            パスワード(確認用)
+          |
+          - f.label :password_confirmation
           br
           = f.password_field :password_confirmation, autocomplete: "new-password"
       .field.input_fields
-        = f.label :image
+        |
+          画像
+        |
+        - f.label :image
         br
         = f.file_field :image, autocomplete: "image"
 

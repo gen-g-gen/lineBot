@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:update, :destroy, :edit]
+  before_action :set_group, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -17,11 +17,11 @@ class GroupsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
-    @user = User.where.not(id: current_user.id)
+    @users = User.all
+    
     
   end
 
@@ -39,6 +39,8 @@ class GroupsController < ApplicationController
   def show
     @user = User.all(params[:id])
   end
+
+  
 
   private
   def group_params

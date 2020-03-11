@@ -2,10 +2,8 @@
   .box__viewfile__topcontent__left 友達
   .box__viewfile__topcontent__right
     .box__viewfile__topcontent__right__editTalk
-      / = link_to new_group_path, class: 'g-btn' do
-      /   = icon 'fas', 'comment-medical'
     .box__viewfile__topcontent__right__editmenu
-      = link_to edit_user_path(current_user.id), class: 'btn' do
+      / = link_to edit_user_path(current_user.id), class: 'btn' do
         = icon 'fas', 'ellipsis-v'
 .box__viewfile__main-message 
   - @user.each do |user|
@@ -20,7 +18,6 @@
         .box__viewfile__main-message__box__content__name
           =user.nickname
         .box__viewfile__main-message__box__content__text
-          / =group.message
 
       .box__viewfile__main-message__box__time 
          

@@ -11,6 +11,14 @@ class User < ApplicationRecord
   has_many :norris
   mount_uploader :image, ImageUploader
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :nickname,            presence: true
+  validates :firstname,           presence: true, format: { with: /\A[一-龥ぁ-ん]/}
+  validates :lastname,            presence: true, format: { with: /\A[一-龥ぁ-ん]/}
+  validates :email,               presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  validates :image,               presence: true
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     # sns認証したことがあればアソシエーションで取得
