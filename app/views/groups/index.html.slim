@@ -21,7 +21,6 @@
           .box__viewfile__main-message__box__content__name
             =group.name
           .box__viewfile__main-message__box__content__text
-            / =group.message
 
         .box__viewfile__main-message__box__time 
           -if @time.day == group.created_at.day
@@ -32,5 +31,4 @@
             = group.created_at.strftime("%m/%d")
         
         
-      / .box__viewfile__main-message__box__post
  
