@@ -23,7 +23,37 @@ Things you may want to cover:
 
 * ...
 
-# lineBot DB設計
+# lineBot 
+## 概要
+fakerの中のchucknorrisの中身が気になり、lineのbot機能として返信するアプリを作成した。
+そのために、外見はスマホとし、メッセージ機能を導入した。
+![Uploading スクリーンショット 2020-03-16 0.21.57.png…]()
+
+## 目的
+・chucknorrisのfakerの中身の確認
+・メッセージアプリ作成を通じての復習
+・JSのみでの機能実装
+
+## 接続先情報
+IPアドレス：http://18.176.7.220/
+email/Pass
+  email    ：test@gmail.com
+  Password ：000000
+
+## 開発状況
+開発言語： Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code/js
+
+## 工夫した点
+### jsでの非同期通信
+  jqueryはコードがシンプルな文、バックグラウンドでの処理速度が重い。また、現在下火になり、
+  脱jquery化が行われていると知ったため、jsでの非同期通信を行ったところ。
+  
+## 苦労した点
+  jqueryを使っての非同期通信はコマンドが直感的に理解がしやすく実装に手間がかからないが、
+  jsのみでの非同期通信は、一つ一つコマンドを確かめながら出ないと理解できなかった。
+  ネット記事を参考にしてあが、不明点が多々あったため、遠回りかもしれないが、基礎から学ぶようにした。
+  その甲斐もあり、周辺知識も同様に学べた。
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
