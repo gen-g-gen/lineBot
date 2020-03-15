@@ -46,20 +46,20 @@
             |  文字以上)
         br
         = f.password_field :password, autocomplete: "new-password"
-        .field.input_field
-          |
-            パスワード(確認用)
-          |
-          - f.label :password_confirmation
-          br
-          = f.password_field :password_confirmation, autocomplete: "new-password"
-      .field.input_fields
-        |
-          画像
-        |
-        - f.label :image
-        br
-        = f.file_field :image, autocomplete: "image"
+    .field.input_fields
+      |
+        パスワード(確認用)
+      |
+      - f.label :password_confirmation
+      br
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field.input_fields
+      |
+        画像
+      |
+      - f.label :image
+      br
+      = f.file_field :image, autocomplete: "image"
 
     .actions
       = f.submit "Sign up", class:"btn"

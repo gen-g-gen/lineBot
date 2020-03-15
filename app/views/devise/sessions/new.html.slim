@@ -2,14 +2,14 @@
   h2
     | ログイン画面
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
+    .field.input_fields
       |
         メールアドレス
       |
       - f.label :email, class: "email_input"
       br
       = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
+    .field.input_fields
       |
         パスワード
       |
