@@ -13,11 +13,12 @@
     width:80%;
     font-weight:bold;
     color:white;
-    margin:10px;
+    margin:10px; 
+    overflow-x: hidden;
+    overflow-y: scroll;
+
   }
-    #user_email{
-      border-radius: 10px;
-    }
+   
   
   .pass_input{
     width:100%;
@@ -25,12 +26,9 @@
     color:white;
     margin:10px;
   }
-    #user_password{
-      border-radius: 10px;
-    }
+   
   .remember{
     width:100%;
-    
     color:white;
     margin:10px;
     font-size: 14px;

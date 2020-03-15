@@ -35,34 +35,13 @@
     bottom: -16px;
   }
 
-  /*閉じる用の薄黒カバー*/
-  // #nav-close {
-  //   display: none;/*はじめは隠しておく*/
-  //   position: fixed;
-  //   z-index: 1;
-  //   top: 0;/*全体に広がるように*/
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: black;
-  //   opacity: 0;
-  //   transition: .3s ease-in-out;
-    
-  // }
 
-  /*中身*/
   #nav-content {
     overflow: auto;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 150px;/*右側に隙間を作る（閉じるカバーを表示）*/
-    // max-width: 90px;/*最大幅（調整してください）*/
+    z-index: 9999;
+    width: 150px;
     height: 80px;
-    background: #fff;/*背景色*/
-    // transition: .3s ease-in-out;/*滑らかに表示*/
-    // -webkit-transform: translateY(0%);
+    background: #fff;
     transform: translateY(-300%);
     ul{
       .gnav{
@@ -77,7 +56,6 @@
           color:black;
           text-decoration: none;
           line-height: 30px;
-          // margin:5px;
           font-size: 15px;
 
         }
@@ -86,9 +64,8 @@
   }
 }
 
-  /*チェックが入ったらもろもろ表示*/
   #nav-input:checked ~ #nav-close {
-    display: block;/*カバーを表示*/
+    display: block;
     opacity: .5;
   }
 

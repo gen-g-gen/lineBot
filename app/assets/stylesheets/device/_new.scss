@@ -3,6 +3,10 @@
   background-color: green;
   padding:30px 30px;
   overflow: scroll;
+  /*横向きのスクロール禁止*/
+  overflow-x: hidden;
+  /*縦向きのスクロール許可*/
+  overflow-y: scroll;
   h2{
     font-size:20px;
     color:white;
@@ -22,20 +26,35 @@
 
 
   .input_fields{
-    // height:900px;
     width:100%;
     font-weight:bold;
     color:white;
-    margin:10px;
-    border-radius: 10px;
-    #user_email, 
-    #user_password, 
-    #user_password_confirmation,
-    #user_nickname,
-    #user_lastname,
-    #user_firstname{
+   
+    
+    #user_firstname {
       border-radius: 10px;
     }
+    #user_email {
+      border-radius: 10px;
+    }
+    #user_nickname {
+      border-radius: 10px;
+    }
+    #user_lastname {
+      border-radius: 10px;
+    }
+    #user_email {
+      border-radius: 10px;
+    }
+    #user_password{
+      border-radius: 10px;
+    }
+    #user_password_confirmation{
+      border-radius: 10px;
+    }
+
+   
+    
   }
   .actions{
     height: 40px;
