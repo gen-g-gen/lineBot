@@ -13,24 +13,20 @@ html
         .box__phone-info
           .time#time
             javascript: 
-              var time= new Date();
-              var hour = time.getHours();
-              var minute = time.getMinutes()
-              document.write(hour+":"+minute)
-                function clock(){
-                  var time= new Date();
+              setInterval((function clock(){
+                var time= new Date();
                   var hour = time.getHours();
                     if (hour < 10) {
                     hour = "0" + hour;
                     };
                   var minute = time.getMinutes();
                   if (minute < 10) {
-                    minute = "0" + mitute;
+                    minute = "0" + minute;
                     };
                   var time = hour+":"+minute;
                   document.getElementById('time').innerHTML = time;
-                };
-                setInterval('clock()',30000);
+                  return clock;
+              }()), 30000);
               
           .icons
             = icon 'fas', 'signal'
