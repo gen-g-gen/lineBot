@@ -3,7 +3,7 @@
 fakerの中のchucknorrisの中身が気になり、lineのbot機能として返信するアプリを作成した。
 そのために、外見はスマホとし、メッセージ機能を導入した。  
 ログイン画面  
-<img src="https://github.com/gen-g-gen/lineBot/blob/master/login-view.png" width="40%">  
+<img src="https://github.com/gen-g-gen/lineBot/blob/master/login-view.png" width="40%">
 チャット画面  
 <img src="https://github.com/gen-g-gen/lineBot/blob/master/chat-view.png" width="40%">  
 
@@ -81,36 +81,5 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 |group_id|integer|null:false, foreign_key: true|
 
 #### Association
-- belongs_to :user
-- belongs_to :group
-
-
-## norrisテーブル
-|Column|Type|Options|
-|------|----|-------|
-|message|text|null: false|
-|user_id|integer|null:false, foreign_key: true|
-|group_id|integer|null:false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :group
-
-## pockemonテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|text|null: false|
-|form|text|null: false|
-|type|text|null: false|
-|status|text|null: false|
-|h|text|null: false| HP
-|a|text|null: false| アタック
-|b|text|null: false| 防御
-|c|text|null: false| とくこう
-|d|text|null: false| とくぼう
-|s|text|null: false| 素早さ
-
-|user_id|integer|null:false, foreign_key: true|
-|group_id|integer|null:false, foreign_key: true|
-### Association
 - belongs_to :user
 - belongs_to :group
