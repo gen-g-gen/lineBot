@@ -35,10 +35,10 @@ fakerの中のchucknorrisの中身が気になり、lineのbot機能として返
 ・JSのみでの機能実装
 
 ## 接続先情報
-IPアドレス：http://18.176.7.220/
-email/Pass
-  email    ：test@gmail.com
-  Password ：000000
+IPアドレス：http://18.176.7.220/  
+email/Pass  
+  email    ：test@gmail.com  
+  Password ：000000  
 
 ## 開発言語
 Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
