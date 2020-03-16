@@ -44,10 +44,12 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|nickname|string|null: false|
+|firstname|string|null: false|
+|lastname|string|null: false|
 |Email|string|null: false|
-|password|string|null: false|
-|image|text|------|
+|encrypted_password|string|null: false|
+|image|text|null: false|
 
 ### Association
 - has_many :messages
@@ -57,9 +59,9 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
-|user_id|integer|null:false, foreign_key: true|
-|group_id|integer|null:false, foreign_key: true|
+|content|text|null: false|
+|user|references|null:false, foreign_key: true|
+|group|references|null:false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -67,7 +69,8 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|integer|null: false|
+|name|text|null: false|
+|image|text|null: false|
 
 ### Association
 - has_many :groups_users
@@ -83,3 +86,14 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 #### Association
 - belongs_to :user
 - belongs_to :group
+
+
+## sns_credentialテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null:false|
+|uid|string|null:false|
+|user|references|null:false, foreign_key: true|
+
+#### Association
+- belongs_to :user
