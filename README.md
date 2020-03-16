@@ -1,33 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # lineBot 
 ## 概要
 fakerの中のchucknorrisの中身が気になり、lineのbot機能として返信するアプリを作成した。
 そのために、外見はスマホとし、メッセージ機能を導入した。
-![Uploading スクリーンショット 2020-03-16 0.21.57.png…]()
+
 
 ## 目的
 ・chucknorrisのfakerの中身の確認
@@ -57,6 +32,8 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
   jsのみでの非同期通信は、一つ一つコマンドを確かめながら出ないと理解できなかった。
   ネット記事を参考にしてあが、不明点が多々あったため、遠回りかもしれないが、基礎から学ぶようにした。
   その甲斐もあり、周辺知識も同様に学べた。
+
+
 
 ## linebot DB設計
 ## usersテーブル
