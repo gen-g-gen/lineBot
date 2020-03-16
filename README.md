@@ -37,8 +37,14 @@ Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
   jsのみでの非同期通信は、一つ一つコマンドを確かめながら出ないと理解できなかった。
   ネット記事を参考にしてあが、不明点が多々あったため、遠回りかもしれないが、基礎から学ぶようにした。
   その甲斐もあり、周辺知識も同様に学べた。
-
-
+  
+## 実装機能
+・　deviseを使ったログイン認証  
+・　omuniauthを使ったログイン認証  
+・　jsでのメッセージ非同期通信  
+・　グループ作成、編集、削除機能  
+・　RSpecを使ったモデルのテスト  
+・　AWS+unicorn+nginxを使ったデプロイ  
 
 ## linebot DB設計
 ## usersテーブル
