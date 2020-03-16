@@ -2,7 +2,7 @@
 ## 概要
 fakerの中のchucknorrisの中身が気になり、lineのbot機能として返信するアプリを作成した。
 そのために、外見はスマホとし、メッセージ機能を導入した。
-![トップ画面](スクリーンショット 2020-03-16 0.21.57.png)
+![ログイン画面](https://github.com/gen-g-gen/lineBot/blob/master/login-view.png)
 
 
 ## 目的
