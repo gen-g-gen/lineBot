@@ -35,18 +35,22 @@ fakerの中のchucknorrisの中身が気になり、lineのbot機能として返
 ・JSのみでの機能実装
 
 ## 接続先情報
-IPアドレス：http://18.176.7.220/
-email/Pass
-  email    ：test@gmail.com
-  Password ：000000
+IPアドレス：http://18.176.7.220/  
+email/Pass  
+  email    ：test@gmail.com  
+  Password ：000000  
 
-## 開発状況
-開発言語： Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code/js
+## 開発言語
+Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
 
 ## 工夫した点
 ### jsでの非同期通信
-  jqueryはコードがシンプルな文、バックグラウンドでの処理速度が重い。また、現在下火になり、
-  脱jquery化が行われていると知ったため、jsでの非同期通信を行ったところ。
+  1.jqueryはコードがシンプルな文、バックグラウンドでの処理速度が重い。また、現在下火になり、
+    脱jquery化が行われていると知ったため、jsのみでの非同期通信を行ったところ。
+  2.FAcebook,Google認証の導入。ローカル環境ではうまくいったが、本番環境では行われなかった。
+    本番環境ではHTTPS通信にしないと導入できないことがわかったため、今後、httos通信、ドメインの取得など
+    行っていきたい。
+
   
 ## 苦労した点
   jqueryを使っての非同期通信はコマンドが直感的に理解がしやすく実装に手間がかからないが、
@@ -54,6 +58,7 @@ email/Pass
   ネット記事を参考にしてあが、不明点が多々あったため、遠回りかもしれないが、基礎から学ぶようにした。
   その甲斐もあり、周辺知識も同様に学べた。
 
+## linebot DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
