@@ -6,7 +6,8 @@ fakerの中のchucknorrisの中身が気になり、lineのbot機能として返
 <img src="https://github.com/gen-g-gen/lineBot/blob/master/login-view.png" width="40%">  
 チャット画面  
 <img src="https://github.com/gen-g-gen/lineBot/blob/master/chat-view.png" width="40%">  
-
+グループ画面
+<img src="https://github.com/gen-g-gen/lineBot/issues/18#issue-613183790" width = "40%">
 
 
 ## 目的
@@ -15,10 +16,7 @@ fakerの中のchucknorrisの中身が気になり、lineのbot機能として返
 ・JSのみでの機能実装
 
 ## 接続先情報
-IPアドレス：http://18.176.7.220/  
-email/Pass  
-  email    ：test@gmail.com  
-  Password ：000000  
+デプロイしたが一旦EIPの解放を行なった。 
 
 ## 開発言語
 Ruby/Ruby on Rails/js/MySQL/Github/AWS/Visual Studio Code
