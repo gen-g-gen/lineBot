@@ -7,7 +7,7 @@ fakerの中のchucknorrisの中身が気になり、lineのbot機能として返
 チャット画面  
 <img src="https://github.com/gen-g-gen/lineBot/blob/master/chat-view.png" width="40%">  
 グループ画面
-<img src="https://github.com/gen-g-gen/lineBot/issues/18#issue-613183790" width = "40%">
+<img src="https://user-images.githubusercontent.com/59825257/81163899-680bf000-8fca-11ea-85ca-f14634b009b2.png" width = "40%">
 
 
 ## 目的
